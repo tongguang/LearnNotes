@@ -4,6 +4,6 @@
   - z==0 合并时只会合并相邻层级，相同图集的元素。
 - 动静分离。一个界面动态改变的（Image改变颜色，sprite等，Text改变文字等，位置改变等）的放一个canvas，不变的放一个canvas。
 - 默认不要勾选raycast
-- 文字少用outline
+- Text少用outline
 - 不要用透明度为0的Image来响应事件检测，自己写个不填充的。
 - 纹理压缩
