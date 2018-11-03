@@ -40,6 +40,7 @@
 
 ####  Mesh
   - Normal、Color和Tangent属性不需要就不要导出，Draw Call Batching 如果有些有这些属性有些没有，那么会导致合批的所有Mesh都带上这些属性，增加内存。
+  - 顶点数量减少
 
 ####  shader
   - 使用Unity上的Mobile版本
@@ -58,7 +59,7 @@
     - 物理组件，mesh collider
     - 在start中Getcomponent缓存
   - gpu
-    - 纹理压缩，mesh简化，shader优化
+    - 纹理压缩，mesh优化，shader优化
   - 内存
     - mono托管内存优化
     - unity加载资源占用优化
