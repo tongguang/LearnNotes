@@ -63,3 +63,7 @@
   - 内存
     - mono托管内存优化
     - unity加载资源占用优化
+
+
+#### 资料
+  - https://blog.csdn.net/candycat1992/article/details/42127811
