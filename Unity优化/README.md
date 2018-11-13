@@ -17,15 +17,15 @@
     - 动态合批 相同材质的小于900顶点属性的自动合批，增加一些cpu消耗。有些因素会打断动态合批，比如scale，具体可以看官网。
     - GPU Instance  将使用相同mesh，相同材质球的物体通过调用底层glDrawElementsInstanced之类的api一次性提交给gpu，减少drawcall次数，例如草，数目， skinmesh通过修改也能使用。
 
-####  动画优化
-  - 浮点数精度优化（一般精确到.3f就行）
-  - 一般模型的缩放曲线可以去掉
-
 ####  GC
   - 对象池
   - StringBuilder代替 +
   - 不要同一帧new太多 可以分帧new
   - 不要在update中new
+
+####  动画优化
+  - 浮点数精度优化（一般精确到.3f就行）
+  - 一般模型的缩放曲线可以去掉
 
 ####  音效
   - 背景音乐 LoadType使用Streaming
