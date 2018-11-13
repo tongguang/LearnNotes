@@ -12,6 +12,11 @@
     - 关闭mipmap
     - Read/Write Enableed 开了会增加一倍纹理内存，确定这张纹理是否需要开启，没特殊情况一般是关掉的。
 
+#### DrawCall
+    - 静态合批 1.场景直接勾选static，mesh会增大一倍，导致包体和内存增大。2.代码调用StaticBatchingUtility.Combine 增加内存和cpu消耗
+    - 动态合批 相同材质的小于900顶点属性的自动合批，增加一些cpu消耗。有些因素会打断动态合批，比如scale，具体可以看官网。
+    - GPU Instance  将使用相同mesh，相同材质球的物体通过调用底层glDrawElementsInstanced之类的api一次性提交给gpu，减少drawcall次数，例如草，数目， skinmesh通过修改也能使用。
+
 ####  动画优化
   - 浮点数精度优化（一般精确到.3f就行）
   - 一般模型的缩放曲线可以去掉
@@ -33,9 +38,6 @@
   - mipmap lod 看情况开启， 锁视角的3d游戏基本是不需要开的
 
 ####  场景
-  - 合批
-    - 静态合批 1.场景直接勾选static，mesh会增大一倍，导致包体和内存增大。2.代码调用StaticBatchingUtility.Combine 增加内存和cpu消耗
-    - 动态合批 相同材质的小于900顶点属性的自动合批，增加一些cpu消耗。有些因素会打断动态合批，比如scale，具体可以看官网。
   - 实时光照相关的能不用就不用。
 
 ####  Mesh
