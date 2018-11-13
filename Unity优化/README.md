@@ -13,9 +13,9 @@
     - Read/Write Enableed 开了会增加一倍纹理内存，确定这张纹理是否需要开启，没特殊情况一般是关掉的。
 
 #### DrawCall
-    - 静态合批 1.场景直接勾选static，mesh会增大一倍，导致包体和内存增大。2.代码调用StaticBatchingUtility.Combine 增加内存和cpu消耗
-    - 动态合批 相同材质的小于900顶点属性的自动合批，增加一些cpu消耗。有些因素会打断动态合批，比如scale，具体可以看官网。
-    - GPU Instance  将使用相同mesh，相同材质球的物体通过调用底层glDrawElementsInstanced之类的api一次性提交给gpu，减少drawcall次数，例如草，数目， skinmesh通过修改也能使用。
+  - 静态合批 1.场景直接勾选static，mesh会增大一倍，导致包体和内存增大。2.代码调用StaticBatchingUtility.Combine 增加内存和cpu消耗
+  - 动态合批 相同材质的小于900顶点属性的自动合批，增加一些cpu消耗。有些因素会打断动态合批，比如scale，具体可以看官网。
+  - GPU Instance  将使用相同mesh，相同材质球的物体通过调用底层glDrawElementsInstanced之类的api一次性提交给gpu，减少drawcall次数，例如草，数目， skinmesh通过修改也能使用。
 
 ####  GC
   - 对象池
